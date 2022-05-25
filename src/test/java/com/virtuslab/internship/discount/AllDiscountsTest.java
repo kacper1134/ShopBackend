@@ -72,8 +72,8 @@ public class AllDiscountsTest {
         var expectedTotalPrice = bread.price().multiply(BigDecimal.valueOf(11)).multiply(BigDecimal.valueOf(0.85));
 
         // When
-        receipt.addDiscount(firstDiscount);
         receipt.addDiscount(secondDiscount);
+        receipt.addDiscount(firstDiscount);
         var receiptAfterDiscounts = receipt.applyAllDiscounts();
 
         // Then

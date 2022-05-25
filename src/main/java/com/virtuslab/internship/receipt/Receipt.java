@@ -34,7 +34,7 @@ public record Receipt(
 
     public Receipt applyAllDiscounts() {
         this.discounts.sort(Comparator.comparing(Discount::getPriority));
-        var currentReceipt = new Receipt(this.entries, this.discounts, this.totalPrice);
+        var currentReceipt = this;
 
         var usedDiscounts = new ArrayList<>(discounts);
 
