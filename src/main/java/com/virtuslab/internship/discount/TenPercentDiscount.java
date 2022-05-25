@@ -8,7 +8,10 @@ import java.math.BigDecimal;
 // Changing shouldApply access modifier from private to public
 // Rename function apply to applyDiscount and removed use of shouldApply method inside it
 public class TenPercentDiscount extends Discount {
-    protected static final Integer priority = 2;
+    public TenPercentDiscount() {
+        super(2);
+    }
+
     @Override
     public Receipt applyDiscount(Receipt receipt) {
         var totalPrice = receipt.totalPrice().multiply(BigDecimal.valueOf(0.9));

@@ -7,7 +7,10 @@ import com.virtuslab.internship.receipt.ReceiptEntry;
 import java.math.BigDecimal;
 
 public class FifteenPercentDiscount extends Discount {
-    protected static final Integer priority = 1;
+    public FifteenPercentDiscount() {
+        super(1);
+    }
+
     @Override
     public Receipt applyDiscount(Receipt receipt) {
         var totalPrice = receipt.totalPrice().multiply(BigDecimal.valueOf(0.85));
